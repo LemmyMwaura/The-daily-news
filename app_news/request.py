@@ -1,6 +1,6 @@
 import os
 import requests
-from .models import Articles, Categories, News_Source
+from .models import Articles, Categories, News_Source, All_news_sources
 
 api_key = os.environ.get('NEWS_API_KEY')
 
@@ -72,3 +72,23 @@ def process_news_sources(news_source):
         news_list.append(news_object)
 
     return news_list
+
+def get_all_sources():
+    url = f'https://newsapi.org/v2/top-headlines/sources?apiKey={api_key}'
+    response = requests.get(url)
+    news_source_dict = response.json()
+
+    return news_source_dict['sources']
+
+def process_all_sources():
+    news_sources_list = []
+    all_news = get_all_sources()
+    for source in all_news:
+        news_id = source.get('id')
+        name = source.get('name')
+        description = source.get('description')
+        url = source.get('url')
+        news_sources_object = All_news_sources(news_id,name,description,url)
+        news_sources_list.append(news_sources_object)
+
+    return news_sources_list

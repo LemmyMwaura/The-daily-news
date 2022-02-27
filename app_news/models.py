@@ -27,4 +27,11 @@ class News_Source():
         self.urltoImage = urltoImage
         self.publishedAt = publishedAt
         self.content = content
+
+class All_news_sources():
+    def __init__(self, news_id, name, description, url):
+        self.news_id = news_id
+        self.name = name
+        self.description = description
+        self.url = url
        
