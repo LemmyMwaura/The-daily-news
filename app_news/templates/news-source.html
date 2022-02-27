@@ -7,7 +7,7 @@
 {% block sources %}
     {% for source in sources%}
         <div class="source">
-            <a href="{{source.news_id}} "> {{source.name}} </a>
+            <a class="source-link" href="{{source.news_id}}"> {{source.name}} </a>
         </div>
     {% endfor %}
 {% endblock %}
@@ -25,7 +25,7 @@
             <p>{{ article.description }}</p>
             <div class="article-items">
                 <p>{{ article.publishedAt }}</p>
-                <a class='article-link' href="{{ article.url }}">Read More</a>
+                <a class='article-link' href="{{ article.url }}" target="_blank">Read More</a>
             </div>
         </div>
         {% endfor %}

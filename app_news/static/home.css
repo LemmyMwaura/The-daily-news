@@ -31,6 +31,10 @@ a{
     margin-bottom: 1rem;
 }
 
+.source-link:hover{
+    color: #64ffda;
+}
+
 .source{
     margin-bottom: 1rem;
 }

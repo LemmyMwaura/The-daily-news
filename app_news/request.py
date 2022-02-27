@@ -2,7 +2,7 @@ import os
 import requests
 from .models import Articles, Categories, News_Source, All_news_sources
 
-api_key = os.environ.get('NEWS_API_KEY')
+api_key = os.environ.get('NEWS_API_KEY2')
 
 def get_articles():
     url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={api_key}'
@@ -22,8 +22,10 @@ def process_articles():
         urltoImage = article.get('urlToImage')
         publishedAt = article.get('publishedAt')
         content = article.get('content')
-        news_object = Articles(author,title,description,url,urltoImage,publishedAt,content)
-        articles_list.append(news_object)
+
+        if urltoImage:
+            news_object = Articles(author,title,description,url,urltoImage,publishedAt,content)
+            articles_list.append(news_object)
 
     return articles_list
 
@@ -45,8 +47,10 @@ def process_categories(category):
         urltoImage = article.get('urlToImage')
         publishedAt = article.get('publishedAt')
         content = article.get('content')
-        category_object = Categories(author,title,description,url,urltoImage,publishedAt,content)
-        category_list.append(category_object)
+
+        if urltoImage:
+            category_object = Categories(author,title,description,url,urltoImage,publishedAt,content)
+            category_list.append(category_object)
 
     return category_list
 
@@ -68,8 +72,10 @@ def process_news_sources(news_source):
         urltoImage = article.get('urlToImage')
         publishedAt = article.get('publishedAt')
         content = article.get('content')
-        news_object = News_Source(author,title,description,url,urltoImage,publishedAt,content)
-        news_list.append(news_object)
+
+        if urltoImage:
+            news_object = News_Source(author,title,description,url,urltoImage,publishedAt,content)
+            news_list.append(news_object)
 
     return news_list
 
