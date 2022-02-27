@@ -4,6 +4,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
 {% endblock %}
 
+{% block sources %}
+    {% for source in sources%}
+        <div class="source">
+            <a href="{{source.news_id}} "> {{source.name}} </a>
+        </div>
+    {% endfor %}
+{% endblock %}
+
 {% block content %}
     <div class="heading">
         <h1> {{ name }}</h1>
