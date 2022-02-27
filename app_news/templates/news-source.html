@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="heading">
+        <h1> {{ name }}</h1>
+    </div>
+    <div class="articles">
+        {% for article in news %}
+        <div class="article-item">
+            <h4 class="article-title">{{ article.title }}</h4>
+            <img src="{{ article.urltoImage}}" alt="news article">
+            <h6>{{ article.author }}</h6>
+            <p>{{ article.description }}</p>
+            <div class="article-items">
+                <p>{{ article.publishedAt }}</p>
+                <a class='article-link' href="{{ article.url }}">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
