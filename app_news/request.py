@@ -75,7 +75,7 @@ def process_news_sources(news_source):
 
         if urltoImage:
             news_object = News_Source(author,title,description,url,urltoImage,publishedAt,content)
-            news_list.append(news_object)
+        news_list.append(news_object)
 
     return news_list
 
