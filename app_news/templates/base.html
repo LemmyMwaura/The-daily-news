@@ -10,14 +10,26 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-
-        </nav>
+      
         <section>
+            <h2 class="source-title">News source</h2>
             {% block sources %}
             {% endblock %}
         </section>
         <main>
+            <nav>
+                <div class="logo">
+                    <a href="/home" class="nav-link">HOME</a>
+                </div>
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="/categories/Business" class="nav-link">Business</a></li>
+                    <li class="nav-item"><a href="/categories/Technology" class="nav-link">Technology</a></li>
+                    <li class="nav-item"><a href="/categories/Science" class="nav-link">Science</a></li>
+                    <li class="nav-item"><a href="/categories/Entertainment" class="nav-link">Entertainment</a></li>
+                    <li class="nav-item"><a href="/categories/Sports" class="nav-link">Sports</a></li>
+                </ul>
+            </nav>
+
             {% block content %}
             {% endblock %}
         </main>
