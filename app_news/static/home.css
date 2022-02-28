@@ -22,6 +22,21 @@ a{
     text-transform: capitalize;
 }
 
+.error{
+    width: 80vw;
+    height: 60vh;
+    display: grid;
+    place-items: center;
+}
+
+.error > h2{
+    font-size: 12rem;
+}
+
+.error> p{
+    font-size: 3rem;
+}
+
 .source-title{
     text-decoration: none;
     color: var(--textcolormain);
