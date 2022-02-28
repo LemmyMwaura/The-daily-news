@@ -1,8 +1,4 @@
-from distutils.debug import DEBUG
-
-import os
 class Config():
-    api_key = os.environ.get('NEWS_API_KEY')
     DEBUG = False
 
 class Dev_config(Config):

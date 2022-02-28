@@ -2,7 +2,7 @@ import os
 import requests
 from .models import Articles, Categories, News_Source, All_news_sources
 
-api_key = os.environ.get('NEWS_API_KEY2')
+api_key = os.environ.get('NEWS_API_KEY')
 
 def get_articles():
     url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={api_key}'
@@ -75,7 +75,7 @@ def process_news_sources(news_source):
 
         if urltoImage:
             news_object = News_Source(author,title,description,url,urltoImage,publishedAt,content)
-        news_list.append(news_object)
+            news_list.append(news_object)
 
     return news_list
 
