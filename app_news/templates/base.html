@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> TheDailyNews by LemmyMwaura </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     {% block link %}{% endblock %}
 </head>
 <body>
     <div class="container">
       
         <section>
-            <h2 class="source-title">News source</h2>
+            <div class="source-wrapper">
+                <i class='bx bxs-news source-icon'></i>
+                <h2 class="source-title">News source</h2>  
+            </div>
             {% block sources %}
             {% endblock %}
         </section>
         <main>
+            <header><h1><a href="/home" class="main-title">The Daily News</a></h1></header>
             <nav>
                 <div class="logo">
                     <a href="/home" class="nav-link">HOME</a>
@@ -29,7 +34,6 @@
                     <li class="nav-item"><a href="/categories/Sports" class="nav-link">Sports</a></li>
                 </ul>
             </nav>
-
             {% block content %}
             {% endblock %}
         </main>

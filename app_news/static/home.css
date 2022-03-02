@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Roboto+Mono:wght@200;300;400;500;600&display=swap');
 
 ::root{
     --maincolor:#64ffda;
@@ -15,7 +15,6 @@ body{
 }
 
 a{
-    text-decoration: none;
     color: var(--textcolormain);
     font-size: 1rem;
     padding: 0.5rem;
@@ -37,13 +36,8 @@ a{
     font-size: 3rem;
 }
 
-.source-title{
-    text-decoration: none;
-    color: var(--textcolormain);
-    font-size: 1rem;
-    padding: 0.5rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+.source-link{
+    padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
 .source-link:hover{
@@ -51,11 +45,15 @@ a{
 }
 
 .source{
-    margin-bottom: 1rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    background-color:#071224;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    text-align: left;
 }
 
 .heading{
-    font-family: 'Fira Mono', serif;
+    font-family: 'Nunito', serif;
     font-weight: 400;
     display:flex;
     align-items: center;
@@ -63,11 +61,12 @@ a{
     margin: 1.5rem 0;
 }
 
-h1{
+.title-heading{
     position: relative;
+    text-transform: capitalize;
 }
 
-h1::before{
+.title-heading::before{
     position: absolute;
     content: '';
     width: 100%;
@@ -110,6 +109,7 @@ h1::before{
 
 .article-item > p{
     margin: 0.7rem 0;
+    font-family: 'Nunito';
 }
 .article-title{
     text-transform: capitalize;
@@ -141,22 +141,27 @@ img{
 
 /* chrome + safari custom scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     cursor: pointer;
     height: 1em;
   }
   
   ::-webkit-scrollbar-track {
     background: #040c18;
-    border-radius: 100vw;
-    margin-block: 0.5em;
+    margin-block: 0.3em;
+    cursor: pointer;
   }
   
   ::-webkit-scrollbar-thumb {
     background:#c6d1f1;
     backdrop-filter: blur(30px);
     cursor: pointer;
-    border-radius: 100vw;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background:#919cba;
+    backdrop-filter: blur(30px);
+    cursor: pointer;
   }
   
   /* firefox custom scrollbar */
