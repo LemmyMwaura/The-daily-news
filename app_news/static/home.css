@@ -125,17 +125,22 @@ img{
     align-self: center;
 }
 
-.article-items{
+.article-footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.article-time{
+    font-size: 0.8rem;
 }
 
 .article-link{
     padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
     color: #c6d1f1;
     background-color: #040c18;
-    margin-top: 1rem;
     justify-self: flex-end;
 }
 

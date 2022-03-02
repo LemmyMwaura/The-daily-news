@@ -23,8 +23,8 @@
             <img src="{{ article.urltoImage}}" alt="news article">
             <h6>{{ article.author }}</h6>
             <p>{{ article.description }}</p>
-            <div class="article-items">
-                <p>{{ article.publishedAt }}</p>
+            <div class="article-footer">
+                <p class="article-time">{{ article.publishedAt }}</p>
                 <a class='article-link' href="{{ article.url }}" target="_blank">Read More</a>
             </div>
         </div>

@@ -85,7 +85,7 @@ nav{
     justify-content: center;
     height: 4rem;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 nav::after,
