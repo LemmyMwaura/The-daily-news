@@ -3,7 +3,7 @@ import requests
 from .models import Articles, Categories, News_Source, All_news_sources
 from datetime import datetime
 
-api_key = os.environ.get('NEWS_API_KEY2')
+api_key = os.environ.get('NEWS_API_KEY')
 
 def date_format(zulu_time): 
     date_array = zulu_time.split('T')
