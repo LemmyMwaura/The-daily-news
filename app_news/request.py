@@ -7,11 +7,8 @@ api_key = os.environ.get('NEWS_API_KEY2')
 
 def date_format(zulu_time): 
     date_array = zulu_time.split('T')
-    time = date_array[1].replace("Z","")
-    date_string =f'{date_array[0]} {time}'
-
-    date_object = datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S')
-    return date_object.strftime('%B %d %Y, %H:%M:%S')
+    date_object = datetime.strptime(date_array[0], '%Y-%m-%d')
+    return date_object.strftime('%B %d %Y.')
 
 def get_articles():
     url = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={api_key}'
@@ -86,7 +83,6 @@ def process_news_sources(news_source):
         content = article.get('content')
 
         if urltoImage:
-            if author is None: return 'UnKnown'
             news_object = News_Source(author,title,description,url,urltoImage,publishedAt,content)
             news_list.append(news_object)
 
